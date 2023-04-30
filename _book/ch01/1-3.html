@@ -1,0 +1,404 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1-3. 변수 선언과 데이터 할당 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-4.md" />
+    
+    
+    <link rel="prev" href="1-2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1. 데이터 타입
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    1-1. 데이터 타입의 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    1-2. 데이터 타입에 관한 배경지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="1-3.html">
+            
+                <a href="1-3.html">
+            
+                    
+                    1-3. 변수 선언과 데이터 할당
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1-4.md">
+            
+                <span>
+            
+                    
+                    1-4. 기본형 데이터와 참조형 데이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1-5.md">
+            
+                <span>
+            
+                    
+                    1-5. 불변 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1-6.md">
+            
+                <span>
+            
+                    
+                    1-5. undefined와 null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1-3. 변수 선언과 데이터 할당</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-3-&#xBCC0;&#xC218;-&#xC120;&#xC5B8;&#xACFC;-&#xB370;&#xC774;&#xD130;-&#xD560;&#xB2F9;">1-3. &#xBCC0;&#xC218; &#xC120;&#xC5B8;&#xACFC; &#xB370;&#xC774;&#xD130; &#xD560;&#xB2F9;</h1>
+<h2 id="&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758;-&#xAD6C;&#xC870;">&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xAD6C;&#xC870;</h2>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch01/images/javascript-structure.png?raw=true" alt=" &#xCD9C;&#xCC98; - https://new93helloworld.tistory.com/358 "></p>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xC704; &#xC774;&#xBBF8;&#xC9C0;&#xC640; &#xAC19;&#xC740; &#xAD6C;&#xC870;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4;&#xC788;&#xB2E4;. </p>
+<p>&#xC774;&#xBC88; &#xAE00;&#xC740; &#xBCC0;&#xC218; &#xC120;&#xC5B8;&#xACFC; &#xB370;&#xC774;&#xD130; &#xD560;&#xB2F9;&#xC5D0; &#xAD00;&#xD55C; &#xB0B4;&#xC6A9;&#xC774;&#xBBC0;&#xB85C; &#xCF5C;&#xC2A4;&#xD0DD;&#xACFC; &#xBA54;&#xBAA8;&#xB9AC; &#xD799;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xB2E4;&#xB8F0; &#xC608;&#xC815;&#xC774;&#xB2E4;.</p>
+<h3 id="&#xCF5C;&#xC2A4;&#xD0DD;-&#xBA54;&#xBAA8;&#xB9AC;-&#xD799;&#xC774;-&#xBB34;&#xC5C7;&#xC77C;&#xAE4C;">&#xCF5C;&#xC2A4;&#xD0DD;, &#xBA54;&#xBAA8;&#xB9AC; &#xD799;&#xC774; &#xBB34;&#xC5C7;&#xC77C;&#xAE4C;?</h3>
+<ul>
+<li>&#xCF5C;&#xC2A4;&#xD0DD;<ul>
+<li>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xAE30;&#xBCF8;&#xD0C0;&#xC785;(&#xC6D0;&#xC2DC;&#xD0C0;&#xC785;)&#xC758; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC800;&#xC7A5;&#xB418;&#xB294; &#xC601;&#xC5ED;&#xC774;&#xB2E4;.</li>
+<li>&#xBCC0;&#xC218;&#xBA85;(&#xC2DD;&#xBCC4;&#xC790;) &#xB610;&#xD55C; &#xC774;&#xACF3;&#xC5D0; &#xC800;&#xC7A5;&#xB41C;&#xB2E4;.</li>
+<li>&#xC2A4;&#xCF54;&#xD504; &#xCCB4;&#xC778;&#xACFC; this&#xB97C; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</li>
+<li>&#xCF54;&#xB4DC; &#xC2E4;&#xD589; &#xC21C;&#xC11C;&#xB97C; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xBA54;&#xBAA8;&#xB9AC; &#xD799;<ul>
+<li>&#xCC38;&#xC870; &#xD0C0;&#xC785;&#xC758; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC800;&#xC7A5;&#xB41C;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#xBCC0;&#xC218;-&#xC120;&#xC5B8;">&#xBCC0;&#xC218; &#xC120;&#xC5B8;</h2>
+<p>&#xC544;&#xB798; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xBCC0;&#xC218; a&#xB97C; &#xC120;&#xC5B8;&#xD55C;&#xB2E4;. </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> a;
+</code></pre>
+<p>&#xC774; &#xB54C; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0;&#xC11C;&#xB294; &#xC5B4;&#xB5A4; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294;&#xC9C0; &#xB2E4;&#xC74C; &#xADF8;&#xB9BC;&#xC744; &#xD1B5;&#xD574; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch01/images/1-3.png?raw=true" alt="&#x1107;&#x1167;&#x11AB;&#x1109;&#x116E;&#x1109;&#x1165;&#x11AB;&#x110B;&#x1165;&#x11AB;.png"></p>
+<p>Code-1&#xC774; &#xC2E4;&#xD589;&#xB418;&#xBA74; &#xCF5C;&#xC2A4;&#xD0DD; &#xC601;&#xC5ED;&#xC5D0; &#xBCC0;&#xC218;&#xC758; &#xC2DD;&#xBCC4;&#xC790;&#xAC00; &#xC800;&#xC7A5;&#xB41C;&#xB2E4;. &#xBCC0;&#xC218; a&#xB294; &#xC544;&#xC9C1; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC774;&#xB904;&#xC9C0;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC12;&#xC740; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
+<h2 id="&#xB370;&#xC774;&#xD130;-&#xD560;&#xB2F9;">&#xB370;&#xC774;&#xD130; &#xD560;&#xB2F9;</h2>
+<p>&#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD560;&#xB2F9;&#xD560; &#xB54C;&#xB294; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0;&#xC11C; &#xC5B4;&#xB5A4; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A0;&#xAE4C;?</p>
+<p>&#xC544;&#xB798; &#xCF54;&#xB4DC;&#xB294; a&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xADF8; &#xC548;&#xC5D0; 3&#xC774;&#xB77C;&#xB294; &#xC22B;&#xC790;&#xB97C; &#xB123;&#xC5B4; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xC774;&#xB2E4;.</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> a = <span class="hljs-number">3</span>;
+</code></pre>
+<p>Code-2&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xB370;&#xC774;&#xD130;&#xAC00; &#xD560;&#xB2F9;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c69490de-7928-4d50-a151-aff9f920863e/%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%92%E1%85%A1%E1%86%AF%E1%84%83%E1%85%A1%E1%86%BC.png" alt="&#x1103;&#x1166;&#x110B;&#x1175;&#x1110;&#x1165;&#x1112;&#x1161;&#x11AF;&#x1103;&#x1161;&#x11BC;.png"></p>
+<ol>
+<li>&#xCF5C;&#xC2A4;&#xD0DD; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xBCC0;&#xC218; &#xC601;&#xC5ED; &#xC5D0;&#xC11C; &#xBE48; &#xACF5;&#xAC04;(@1002)&#xC744; &#xD655;&#xBCF4;&#xD55C;&#xB2E4;.</li>
+<li>&#xD655;&#xBCF4;&#xD55C; &#xACF5;&#xAC04;&#xC758; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; a&#xB85C; &#xC9C0;&#xC815;&#xD55C;&#xB2E4;.</li>
+<li>&#xCF5C;&#xC2A4;&#xD0DD; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xB370;&#xC774;&#xD130; &#xC601;&#xC5ED;&#xC758; &#xBE48; &#xACF5;&#xAC04;(@2002)&#xC5D0; &#xC22B;&#xC790; 3&#xC744; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;.</li>
+<li>&#xCF5C;&#xC2A4;&#xD0DD; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xBCC0;&#xC218; &#xC601;&#xC5ED;&#xC5D0;&#xC11C; a&#xB77C;&#xB294; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; &#xAC80;&#xC0C9;&#xD55C;&#xB2E4;. (@1002)</li>
+<li>&#xC55E;&#xC11C; &#xC800;&#xC7A5;&#xD55C; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC8FC;&#xC18C;(@2002)&#xB97C; @1002&#xC758; &#xACF5;&#xAC04;&#xC5D0; &#xB300;&#xC785;&#xD55C;&#xB2E4;.</li>
+</ol>
+<h3 id="&#xC65C;-&#xBCC0;&#xC218;-&#xC601;&#xC5ED;&#xC5D0;-&#xAC12;&#xC744;-&#xB300;&#xC785;&#xD558;&#xC9C0;-&#xC54A;&#xACE0;-&#xD55C;-&#xB2E8;&#xACC4;&#xB97C;-&#xB354;-&#xAC70;&#xCE60;&#xAE4C;">&#xC65C; &#xBCC0;&#xC218; &#xC601;&#xC5ED;&#xC5D0; &#xAC12;&#xC744; &#xB300;&#xC785;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xD55C; &#xB2E8;&#xACC4;&#xB97C; &#xB354; &#xAC70;&#xCE60;&#xAE4C;?</h3>
+<ul>
+<li><p><strong>&#xB370;&#xC774;&#xD130; &#xBCC0;&#xD658;&#xC744; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC74C;.</strong></p>
+<p>  &#xB9CC;&#xC57D; Code-2&#xC5D0;&#xC11C; &#xC120;&#xC5B8;&#xD55C; 3&#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB41C; a&#xBCC0;&#xC218;&#xB97C; &#x2018;abc&#x2019;&#xB77C;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xB2F4;&#xAE34; &#xBCC0;&#xC218;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A8;.</p>
+<p>  <img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f5c0eec-f0cc-433c-9ec1-40e4f9124fba/%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%87%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC.png" alt="&#x1110;&#x1161;&#x110B;&#x1175;&#x11B8;&#x1107;&#x1167;&#x11AB;&#x1100;&#x1167;&#x11BC;.png"></p>
+<p>  &#xBCC0;&#xC218;a&#xAC00; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; &#xC8FC;&#xC18C;&#xAC12;&#xB9CC; @2002 &#x2192; @2003&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC11C; &#xC0C8;&#xB85C;&#xC6B4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB123;&#xC5B4;&#xC90C;.</p>
+<p>  &#xB9CC;&#xC57D; &#xBCC0;&#xC218; &#xC601;&#xC5ED;&#xC5D0; &#xBC14;&#xB85C; &#xAC12;&#xC744; &#xC800;&#xC7A5;&#xD588;&#xB2E4;&#xBA74; &#xC22B;&#xC790;3&#xC5D0;&#xC11C; &#xC22B;&#xC790;5&#xB85C; &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD574;&#xC11C; &#xC800;&#xC7A5;&#xD560; &#xC218;&#xB294; &#xC788;&#xC5B4;&#xB3C4; &#xC22B;&#xC790; &#x2192; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xAC12;&#xC744; &#xBC14;&#xAFD4;&#xC11C; &#xC800;&#xC7A5;&#xD560; &#xC218;&#xB294; &#xC5C6;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xC22B;&#xC790;&#xC640; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xCC28;&#xC9C0;&#xD558;&#xB294; &#xBA54;&#xBAA8;&#xB9AC; &#xD06C;&#xAE30;&#xAC00; &#xB2E4;&#xB974;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+</li>
+<li><p><strong>&#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD6A8;&#xC728;&#xC801;&#xC73C;&#xB85C; &#xAD00;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD568;.</strong></p>
+<p>  &#xB9CC;&#xC57D; 500&#xAC1C;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xC0DD;&#xC131;&#xD55C; &#xD6C4; &#xAC12;&#xC744; &#xBAA8;&#xB450; 5&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xC0C1;&#xD669;&#xC774; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xC790;. </p>
+<p>  &#xBCC0;&#xC218;&#xC601;&#xC5ED;&#xACFC; &#xB370;&#xC774;&#xD130;&#xC601;&#xC5ED;&#xC774; &#xB098;&#xB204;&#xC5B4;&#xC838;&#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xCD1D; 4000(500 * 8)byte&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;.</p>
+<p>  &#xD558;&#xC9C0;&#xB9CC; &#xBCC0;&#xC218;&#xC601;&#xC5ED;&#xACFC; &#xB370;&#xC774;&#xD130;&#xC601;&#xC5ED;&#xC744; &#xB530;&#xB85C; &#xB454;&#xB2E4;&#xBA74; &#xBCC0;&#xC218; 500&#xAC1C;&#xC5D0; &#xB300;&#xD55C; &#xC8FC;&#xC18C;&#xB9CC; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xAC12;&#xC740; &#xD558;&#xB098;&#xB9CC; &#xC800;&#xC7A5;&#xD574;&#xB3C4; &#xB41C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC8FC;&#xC18C; &#xACF5;&#xAC04;&#xC758; &#xD06C;&#xAE30;&#xB97C; 2btye&#xB77C;&#xACE0; &#xD55C;&#xB2E4;&#xBA74;(<del>&#xC815;&#xD655;&#xD55C; &#xD06C;&#xAE30;&#xB97C; &#xCC3E;&#xC544;&#xBCF4;&#xB824; &#xD588;&#xC73C;&#xB098; &#xBABB;&#xCC3E;&#xC74C;</del>) 1008(500 * 2 + 8)byte&#xB9CC; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-2.html" class="navigation navigation-prev " aria-label="Previous page: 1-2. 데이터 타입에 관한 배경지식">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-4.md" class="navigation navigation-next " aria-label="Next page: 1-4. 기본형 데이터와 참조형 데이터">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1-3. 변수 선언과 데이터 할당","level":"1.2.3","depth":2,"next":{"title":"1-4. 기본형 데이터와 참조형 데이터","level":"1.2.4","depth":2,"path":"ch01/1-4.md","ref":"ch01/1-4.md","articles":[]},"previous":{"title":"1-2. 데이터 타입에 관한 배경지식","level":"1.2.2","depth":2,"path":"ch01/1-2.md","ref":"ch01/1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch01/1-3.md","mtime":"2023-04-30T13:20:40.828Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-30T13:20:46.168Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

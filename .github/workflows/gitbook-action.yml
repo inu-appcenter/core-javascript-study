@@ -16,3 +16,4 @@ jobs:
       with:                                  
         token: ${{ secrets.PERSONAL_TOKEN }}
         source_repo: inu-appcenter/frontend-cs-study
+        source_barnch: main

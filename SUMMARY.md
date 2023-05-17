@@ -16,3 +16,8 @@
   - [2-1. 실행 컨텍스트란](ch02/2-1.md)
   - [2-2. VariableEnviroment](ch02/2-2.md)
   - [2-3. LexicalEnviroment](ch02/2-3.md)
+
+- [3. this](ch03/3.md)
+
+  - [3-1. 상황에 따라 달라지는 this](ch03/3-1.md)
+  - [3-2. 명시적으로 this를 바인딩하는 방법](ch03/3-2.md)

@@ -11,7 +11,8 @@
   - [1-5. 불변 객체](ch01/1-5.md)
   - [1-5. undefined와 null](ch01/1-6.md)
 
-- [2. 실행 컨텍스트]()
+- [2. 실행 컨텍스트](ch02/2.md)
+
   - [2-1. 실행 컨텍스트란](ch02/2-1.md)
   - [2-2. VariableEnviroment](ch02/2-2.md)
   - [2-3. LexicalEnviroment](ch02/2-3.md)

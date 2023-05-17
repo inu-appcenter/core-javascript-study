@@ -1,0 +1,448 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2-1. 실행 컨텍스트란 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-2.html" />
+    
+    
+    <link rel="prev" href="2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch01/1.html">
+            
+                <a href="../ch01/1.html">
+            
+                    
+                    1. 데이터 타입
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch01/1-1.html">
+            
+                <a href="../ch01/1-1.html">
+            
+                    
+                    1-1. 데이터 타입의 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch01/1-2.html">
+            
+                <a href="../ch01/1-2.html">
+            
+                    
+                    1-2. 데이터 타입에 관한 배경지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch01/1-3.html">
+            
+                <a href="../ch01/1-3.html">
+            
+                    
+                    1-3. 변수 선언과 데이터 할당
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../ch01/1-4.html">
+            
+                <a href="../ch01/1-4.html">
+            
+                    
+                    1-4. 기본형 데이터와 참조형 데이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../ch01/1-5.html">
+            
+                <a href="../ch01/1-5.html">
+            
+                    
+                    1-5. 불변 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../ch01/1-6.html">
+            
+                <a href="../ch01/1-6.html">
+            
+                    
+                    1-5. undefined와 null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2. 실행 컨텍스트
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="2-1.html">
+            
+                <a href="2-1.html">
+            
+                    
+                    2-1. 실행 컨텍스트란
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+            
+                <a href="2-2.html">
+            
+                    
+                    2-2. VariableEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2-3.html">
+            
+                <a href="2-3.html">
+            
+                    
+                    2-3. LexicalEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2-1. 실행 컨텍스트란</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-1-&#xC2E4;&#xD589;-&#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB780;">2-1 &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB780;?</h1>
+<p>&#xC2E4;&#xD589;&#xD560; &#xCF54;&#xB4DC;&#xC5D0; &#xC81C;&#xACF5;&#xD560; &#xD658;&#xACBD; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xBAA8;&#xC544;&#xB123;&#xC740; &#xAC1D;&#xCCB4; ( JavaScript &#xAC00; &#xC65C; &#xB3D9;&#xC801; &#xC5B8;&#xC5B4;&#xC778;&#xC9C0; &#xC131;&#xACA9;&#xC744; &#xAC00;&#xC7A5; &#xC798; &#xD30C;&#xC545;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC1C;&#xB150; )</p>
+<p>&#xB3D9;&#xC77C;&#xD55C; &#xD658;&#xACBD;&#xC5D0; &#xC788;&#xB294; &#xCF54;&#xB4DC;&#xB4E4;&#xC744; &#xC2E4;&#xD589;&#xD560; &#xB54C; &#xD544;&#xC694;&#xD55C; &#xD658;&#xACBD; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xBAA8;&#xC544; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xACE0;, &#xC774;&#xB97C; &#xCF5C; &#xC2A4;&#xD0DD;(call stack) &#xC5D0; &#xC313;&#xC544;&#xC62C;&#xB838;&#xB2E4;&#xAC00;, &#xAC00;&#xC7A5; &#xC704;&#xC5D0; &#xC313;&#xC5EC;&#xC788;&#xB294; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xAD00;&#xB828; &#xC788;&#xB294; &#xCF54;&#xB4DC;&#xB4E4;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xC804;&#xCCB4; &#xCF54;&#xB4DC;&#xC758; &#xD658;&#xACBD;&#xACFC; &#xC21C;&#xC11C;&#xB97C; &#xBCF4;&#xC7A5;</p>
+<p>&#xB3D9;&#xC77C;&#xD55C; &#xD658;&#xACBD; = &#xD558;&#xB098;&#xC758; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;</p>
+<ul>
+<li><p>&#xC804;&#xC5ED; &#xACF5;&#xAC04;</p>
+</li>
+<li><p>eval() &#xD568;&#xC218;</p>
+</li>
+<li><p>&#xC77C;&#xBC18; &#xD568;&#xC218;</p>
+</li>
+</ul>
+<p>&#xC774; &#xC911; &#xC6B0;&#xB9AC;&#xAC00; &#xD754;&#xD788; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589; &#xD558;&#xB294; &#xAC83;</p>
+<hr>
+<pre><code class="lang-jsx"><span class="hljs-comment">// &#xC608;&#xC81C;</span>
+<span class="hljs-comment">// ------------------------------- (1)</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">outer</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inner</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// undefined</span>
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">3</span>;
+  }
+  inner(); <span class="hljs-comment">// ------------------- (2)</span>
+  <span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 1</span>
+}
+outer(); <span class="hljs-comment">// --------------------- (3)</span>
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 1;</span>
+</code></pre>
+<p>(<a href="https://raw.githubusercontent.com/inu-appcenter/core-javascript-study/main/ch01/images/2-1-1.avif" target="_blank">https://raw.githubusercontent.com/inu-appcenter/core-javascript-study/main/ch01/images/2-1-1.avif</a> &quot;&#xADF8;&#xB9BC;-1&quot;)</p>
+<p>&#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB420; &#xB54C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC5D4;&#xC9C4;&#xC740; &#xD574;&#xB2F9; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xAD00;&#xB828;&#xB41C; &#xCF54;&#xB4DC;&#xB4E4;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xD658;&#xACBD; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xC218;&#xC9D1;&#xD574;&#xC11C; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xAC1D;&#xCCB4;&#xC5D0; &#xC800;&#xC7A5;</p>
+<p>&#xB2E8;, &#xC774; &#xAC1D;&#xCCB4;&#xB294; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC5D4;&#xC9C4;&#xC774; &#xD65C;&#xC6A9;&#xD560; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xD560; &#xBFD0; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xCF54;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC778;&#xD560; &#xC218;&#xB294; &#xC5C6;&#xB2E4;.</p>
+<ul>
+<li>VariableEnviroment
+<strong> &#xD604;&#xC7AC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xB0B4;&#xC758; &#xC2DD;&#xBCC4;&#xC790;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4; + &#xC678;&#xBD80; &#xD658;&#xACBD; &#xC815;&#xBCF4;
+</strong> &#xC120;&#xC5B8; &#xC2DC;&#xC810;&#xC758; LexicalEnviroment &#xC758; &#xC2A4;&#xB0C5;&#xC0F7;&#xC73C;&#xB85C;, &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC740; &#xBC18;&#xC601;&#xB418;&#xC9C0; &#xC54A;&#xC74C;.</li>
+<li>LexicalEnviroment
+** &#xCC98;&#xC74C;&#xC5D0;&#xB294; VariableEnviroment &#xC640; &#xAC19;&#xC9C0;&#xB9CC; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC774; &#xC2E4;&#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xBC18;&#xC601;&#xB428;.</li>
+<li>ThisBinding
+** this &#xC2DD;&#xBCC4;&#xC790;&#xAC00; &#xBC14;&#xB77C;&#xBD10;&#xC57C; &#xD560; &#xB300;&#xC0C1; &#xAC1D;&#xCCB4;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.html" class="navigation navigation-prev " aria-label="Previous page: 2. 실행 컨텍스트">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-2.html" class="navigation navigation-next " aria-label="Next page: 2-2. VariableEnviroment">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2-1. 실행 컨텍스트란","level":"1.3.1","depth":2,"next":{"title":"2-2. VariableEnviroment","level":"1.3.2","depth":2,"path":"ch02/2-2.md","ref":"ch02/2-2.md","articles":[]},"previous":{"title":"2. 실행 컨텍스트","level":"1.3","depth":1,"path":"ch02/2.md","ref":"ch02/2.md","articles":[{"title":"2-1. 실행 컨텍스트란","level":"1.3.1","depth":2,"path":"ch02/2-1.md","ref":"ch02/2-1.md","articles":[]},{"title":"2-2. VariableEnviroment","level":"1.3.2","depth":2,"path":"ch02/2-2.md","ref":"ch02/2-2.md","articles":[]},{"title":"2-3. LexicalEnviroment","level":"1.3.3","depth":2,"path":"ch02/2-3.md","ref":"ch02/2-3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch02/2-1.md","mtime":"2023-05-17T13:34:53.767Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-17T13:35:25.301Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,548 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5-1. 클로저의 의미 및 원리 이해 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5-2.html" />
+    
+    
+    <link rel="prev" href="5.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch01/1.html">
+            
+                <a href="../ch01/1.html">
+            
+                    
+                    1. 데이터 타입
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch01/1-1.html">
+            
+                <a href="../ch01/1-1.html">
+            
+                    
+                    1-1. 데이터 타입의 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch01/1-2.html">
+            
+                <a href="../ch01/1-2.html">
+            
+                    
+                    1-2. 데이터 타입에 관한 배경지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch01/1-3.html">
+            
+                <a href="../ch01/1-3.html">
+            
+                    
+                    1-3. 변수 선언과 데이터 할당
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../ch01/1-4.html">
+            
+                <a href="../ch01/1-4.html">
+            
+                    
+                    1-4. 기본형 데이터와 참조형 데이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../ch01/1-5.html">
+            
+                <a href="../ch01/1-5.html">
+            
+                    
+                    1-5. 불변 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../ch01/1-6.html">
+            
+                <a href="../ch01/1-6.html">
+            
+                    
+                    1-5. undefined와 null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch02/2.html">
+            
+                <a href="../ch02/2.html">
+            
+                    
+                    2. 실행 컨텍스트
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ch02/2-1.html">
+            
+                <a href="../ch02/2-1.html">
+            
+                    
+                    2-1. 실행 컨텍스트란
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ch02/2-2.html">
+            
+                <a href="../ch02/2-2.html">
+            
+                    
+                    2-2. VariableEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ch02/2-3.html">
+            
+                <a href="../ch02/2-3.html">
+            
+                    
+                    2-3. LexicalEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch03/3.html">
+            
+                <a href="../ch03/3.html">
+            
+                    
+                    3. this
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ch03/3-1.html">
+            
+                <a href="../ch03/3-1.html">
+            
+                    
+                    3-1. 상황에 따라 달라지는 this
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ch03/3-2.html">
+            
+                <a href="../ch03/3-2.html">
+            
+                    
+                    3-2. 명시적으로 this를 바인딩하는 방법
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    5. 클로저
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="5-1.html">
+            
+                <a href="5-1.html">
+            
+                    
+                    5-1. 클로저의 의미 및 원리 이해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="5-2.html">
+            
+                <a href="5-2.html">
+            
+                    
+                    5-2. 클로저와 메모리 관리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="5-3.html">
+            
+                <a href="5-3.html">
+            
+                    
+                    5-3. 클로저 활용 사례
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5-1. 클로저의 의미 및 원리 이해</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="5-1-&#xD074;&#xB85C;&#xC800;&#xC758;-&#xC758;&#xBBF8;-&#xBC0F;-&#xC6D0;&#xB9AC;-&#xC774;&#xD574;">5-1 &#xD074;&#xB85C;&#xC800;&#xC758; &#xC758;&#xBBF8; &#xBC0F; &#xC6D0;&#xB9AC; &#xC774;&#xD574;</h1>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/001.png?raw=true" alt="&#xADF8;&#xB9BC;-1" title="&#xADF8;&#xB9BC;-1"></p>
+<p>&#xC548;&#xB155;&#xD558;&#xC138;&#xC694;. &#xC774;&#xBC88;&#xC5D0;&#xB294; &#xCC55;&#xD130; 5&#xC758; &#xD074;&#xB85C;&#xC800;&#xC5D0; &#xB300;&#xD574; &#xBC1C;&#xD45C;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/002.png?raw=true" alt="&#xADF8;&#xB9BC;-2" title="&#xADF8;&#xB9BC;-2"></p>
+<p>&#xBA3C;&#xC800; &#xD074;&#xB85C;&#xC800;&#xAC00; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD074;&#xB85C;&#xC800;&#xB294; &#xC5EC;&#xB7EC; &#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; &#xB4F1;&#xC7A5;&#xD558;&#xB294; &#xBCF4;&#xD3B8;&#xC801;&#xC778; &#xD2B9;&#xC131;&#xC785;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC; &#xCC45;&#xC5D0;&#xC11C;&#xB294; &#xC704;&#xC5D0; &#xBCF4;&#xC774;&#xB294; &#xC0AC;&#xC9C4;&#xACFC; &#xAC19;&#xC774; &#xD074;&#xB85C;&#xC800;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xC758;&#xB97C; &#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5EC;&#xB7EC;&#xBD84;&#xB4E4;&#xC740; &#xC5B4;&#xB5A4; &#xC815;&#xC758;&#xAC00; &#xAC00;&#xC7A5; &#xB9C8;&#xC74C;&#xC5D0; &#xB4DC;&#xC2DC;&#xB098;&#xC694;?</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/003.png?raw=true" alt="&#xADF8;&#xB9BC;-3" title="&#xADF8;&#xB9BC;-3"></p>
+<p>MDN &#xBB38;&#xC11C;&#xC5D0; &#xB098;&#xC640;&#xC788;&#xB294; &#xD074;&#xB85C;&#xC800; &#xC815;&#xC758;&#xC5D0; &#xB300;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD074;&#xB85C;&#xC800;&#xB294; &#xD568;&#xC218;&#xC640; &#xADF8; &#xD568;&#xC218;&#xAC00; &#xC120;&#xC5B8;&#xB420; &#xB2F9;&#xC2DC;&#xC758; lexical environment&#xC758; &#xC0C1;&#xD638;&#xAD00;&#xACC4;&#xC5D0; &#xB530;&#xB978; &#xD604;&#xC0C1;&#xC744; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/004.png?raw=true" alt="&#xADF8;&#xB9BC;-4" title="&#xADF8;&#xB9BC;-4"></p>
+<p>&apos;&#xD568;&#xC218;&#xAC00; &#xC120;&#xC5B8;&#xB420; &#xB2F9;&#xC2DC;&#xC758; lexical environment&apos;&#xAC00; &#xC815;&#xD655;&#xD788; &#xBB34;&#xC5C7;&#xC744; &#xC758;&#xBBF8;&#xD560;&#xAE4C;&#xC694;? &#xC800;&#xBC88;&#xC5D0; &#xBC30;&#xC6E0;&#xB358; &#xB0B4;&#xC6A9; &#xC911; &#xD558;&#xB098;&#xC778;&#xB370; &#xAE30;&#xC5B5;&#xB098;&#xC2DC;&#xB098;&#xC694;?</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/005.png?raw=true" alt="&#xADF8;&#xB9BC;-5" title="&#xADF8;&#xB9BC;-5"></p>
+<p>&#xBC14;&#xB85C; outerEnvironmentReference&#xC785;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xC704; &#xC0AC;&#xC9C4;&#xACFC; &#xAC19;&#xC774; &#xCF5C;&#xC2A4;&#xD0DD;&#xC774; &#xC788;&#xB2E4;&#xACE0; &#xD588;&#xC744; &#xB54C; innerFunc&#xC758; outerEnvironmentReference&#xB294; outer&#xC758; lexical environment&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/006.png?raw=true" alt="&#xADF8;&#xB9BC;-6" title="&#xADF8;&#xB9BC;-6"></p>
+<p>&#xC0C1;&#xD638;&#xAD00;&#xACC4;&#xB294; &#xC815;&#xD655;&#xD788; &#xC5B4;&#xB5A4;&#xAC78; &#xB9D0;&#xD560;&#xAE4C;&#xC694;??</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/007.png?raw=true" alt="&#xADF8;&#xB9BC;-7" title="&#xADF8;&#xB9BC;-7"></p>
+<p>&#xC544;&#xAE4C; &#xBD24;&#xB358; &#xCF5C;&#xC2A4;&#xD0DD;&#xC744; &#xB2E4;&#xC2DC; &#xD55C;&#xBC88; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;. innerFunc&#xAC00; outer&#xC758; lexical environment&#xB97C; &#xD56D;&#xC0C1; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. innerFunc&#xC758; environmentRecord&#xC5D0;&#xC11C;&#xC5D0; &#xC774;&#xBBF8; &#xC788;&#xB294; &#xBCC0;&#xC218;&#xB77C;&#xBA74; outer&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xC744;&#xAC81;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC989;, &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &#xB9D0;&#xD558;&#xB294; &#xC0C1;&#xD638;&#xAD00;&#xACC4;&#xB780; &#xB0B4;&#xBD80;&#xD568;&#xC218;(innerFunc)&#xC5D0;&#xC11C; &#xC678;&#xBD80; &#xBCC0;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xD55C;&#xD574;&#xC11C;&#xB9CC; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/008.png?raw=true" alt="&#xADF8;&#xB9BC;-8" title="&#xADF8;&#xB9BC;-8"></p>
+<p>&#xD55C;&#xBC88; &#xC608;&#xC2DC;&#xB97C; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA3C;&#xC800; &#xC678;&#xBD80; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xB0B4;&#xBD80;&#xD568;&#xC218;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xBCC0;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xD615;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCF54;&#xB4DC;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74; inner &#xD568;&#xC218; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C;&#xB294; a&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; environmentRecord&#xC5D0;&#xC11C; &#xAC12;&#xC744; &#xCC3E;&#xC9C0; &#xBABB;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; outerEnvironmentReference&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xC0C1;&#xC704; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC778; outer&#xC758; lexical environment&#xC5D0; &#xC811;&#xADFC;&#xD574; a&#xB97C; &#xCC3E;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/009.png?raw=true" alt="&#xADF8;&#xB9BC;-9" title="&#xADF8;&#xB9BC;-9"></p>
+<p>outer&#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xBA74; lexical environment&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xC2DD;&#xBCC4;&#xC790;&#xB4E4; (a, inner)&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB97C; &#xC9C0;&#xC6C1;&#xB2C8;&#xB2E4;. &#xAC01; &#xC8FC;&#xC18C;&#xC5D0; &#xC800;&#xC7A5;&#xB3FC; &#xC788;&#xB358; &#xAC12;&#xB4E4;&#xC740; &#xC790;&#xC2E0;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; &#xBCC0;&#xC218;&#xAC00; &#xD558;&#xB098;&#xB3C4; &#xC5C6;&#xAC8C; &#xB418;&#xC8E0;. &#xC989;, &#xCC38;&#xC870; &#xCE74;&#xC6B4;&#xD2B8;&#xAC00; 0&#xC774; &#xB418;&#xC5B4; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xC758; &#xC218;&#xC9D1; &#xB300;&#xC0C1;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/010.png?raw=true" alt="&#xADF8;&#xB9BC;-10" title="&#xADF8;&#xB9BC;-10"></p>
+<p>&#xC774;&#xBC88;&#xC5D0;&#xB294; &#xBE44;&#xC2B7;&#xD558;&#xC9C0;&#xB9CC; &#xC870;&#xAE08; &#xB2E4;&#xB978; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. outer &#xD568;&#xC218;&#xB294; inner &#xD568;&#xC218;&#xB97C; return&#xD569;&#xB2C8;&#xB2E4;. outer &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; outer2 &#xBCC0;&#xC218;&#xB294; outer&#xC758; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xC778; inner &#xD568;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>outer2()&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; inner &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC5B4; a&#xAC00; 2&#xAC00; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8; &#xB2E4;&#xC74C; console.log&#xC5D0;&#xB294; 3&#xC774; &#xCC0D;&#xD788;&#xACA0;&#xB124;&#xC694;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/011.png?raw=true" alt="&#xADF8;&#xB9BC;-11" title="&#xADF8;&#xB9BC;-11"></p>
+<p>inner&#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589; &#xC2DC;&#xC810;&#xC5D0;&#xB294; outer &#xD568;&#xC218;&#xB294; &#xC774;&#xBBF8; &#xC2E4;&#xD589; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC;&#xC778;&#xB370; outer &#xD568;&#xC218;&#xC758; lexical environment&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/012.png?raw=true" alt="&#xADF8;&#xB9BC;-12" title="&#xADF8;&#xB9BC;-12"></p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xB294; &#xC5B4;&#xB5A4; &#xAC12;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; &#xBCC0;&#xC218;&#xAC00; &#xD558;&#xB098;&#xB77C;&#xB3C4; &#xC788;&#xC73C;&#xBA74; &#xADF8; &#xAC12;&#xC740; &#xC218;&#xC9D1; &#xB300;&#xC0C1;&#xC5D0; &#xD3EC;&#xD568;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/013.png?raw=true" alt="&#xADF8;&#xB9BC;-13" title="&#xADF8;&#xB9BC;-13"></p>
+<p>&#xC544;&#xAE4C; &#xBD24;&#xB358; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC2DC; &#xBCF4;&#xBA74;, outer&#xC758; &#xC2E4;&#xD589;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xC5B4;&#xB3C4; outer2&#xB97C; &#xC2E4;&#xD589;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xB0B4;&#xBD80; &#xD568;&#xC218; inner&#xAC00; &#xD638;&#xCD9C;&#xB420; &#xC218; &#xC788;&#xC5C8;&#xC8E0;. inner &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589;&#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xBA74; outerEnvironmentReference&#xAC00; outer&#xD568;&#xC218;&#xC758; lexical environment&#xB97C; &#xD544;&#xC694;&#xB85C; &#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; outer&#xD568;&#xC218;&#xC758; a&#xB294; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xAC00; &#xC218;&#xC9D1;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/014.png?raw=true" alt="&#xADF8;&#xB9BC;-14" title="&#xADF8;&#xB9BC;-14"></p>
+<p>&#xC989;, &#xD074;&#xB85C;&#xC800;&#xB780; &#xC5B4;&#xB5A4; &#xD568;&#xC218; A&#xC5D0;&#xC11C; &#xC120;&#xC5B8;&#xD55C; &#xBCC0;&#xC218; a&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xB0B4;&#xBD80;&#xD568;&#xC218; B&#xB97C; &#xC678;&#xBD80;&#xB85C; &#xC804;&#xB2EC;&#xD55C; &#xACBD;&#xC6B0; A&#xC758; &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB41C; &#xC774;&#xD6C4;&#xC5D0;&#xB3C4; &#xBCC0;&#xC218; a&#xAC00; &#xC0AC;&#xB77C;&#xC9C0;&#xC9C0; &#xC54A;&#xB294; &#xD604;&#xC0C1;&#xC744; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch05/images/015.png?raw=true" alt="&#xADF8;&#xB9BC;-15" title="&#xADF8;&#xB9BC;-15"></p>
+<p>&#xC55E;&#xC11C; &#xB9D0;&#xD588;&#xB358; &#xC678;&#xBD80; &#xC804;&#xB2EC;&#xC774; &#xAF2D; return&#xC744; &#xD1B5;&#xD55C; &#xC804;&#xB2EC;&#xB9CC;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC704; &#xCF54;&#xB4DC;&#xB4E4;&#xB3C4; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xB0B4;&#xBD80;&#xD568;&#xC218;&#xB97C; &#xC678;&#xBD80;&#xC5D0; &#xC804;&#xB2EC;&#xD55C; &#xC608;&#xC2DC;&#xC778;&#xB370;&#xC694;.</p>
+<p>&#xC67C;&#xCABD; &#xCF54;&#xB4DC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; window &#xBA54;&#xC11C;&#xB4DC;&#xB294; setInterval&#xB3C4; &#xBCC4;&#xB3C4;&#xC758; &#xC678;&#xBD80;&#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xC989; inner&#xB77C;&#xB294; &#xB0B4;&#xBD80;&#xD568;&#xC218;&#xB97C; setInterval&#xB85C; &#xC804;&#xB2EC;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD074;&#xB85C;&#xC800;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC8E0;.</p>
+<p>&#xC624;&#xB978;&#xCABD; &#xCF54;&#xB4DC; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB3C4; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;. &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; click &#xC774;&#xBCA4;&#xD2B8; &#xB9AC;&#xC2A4;&#xB108;&#xC5D0; &#xC804;&#xB2EC;&#xD568;&#xC73C;&#xB85C;&#xC368; count &#xBCC0;&#xC218;&#xC5D0; &#xD074;&#xB85C;&#xC800;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC8E0;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.html" class="navigation navigation-prev " aria-label="Previous page: 5. 클로저">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5-2.html" class="navigation navigation-next " aria-label="Next page: 5-2. 클로저와 메모리 관리">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5-1. 클로저의 의미 및 원리 이해","level":"1.5.1","depth":2,"next":{"title":"5-2. 클로저와 메모리 관리","level":"1.5.2","depth":2,"path":"ch05/5-2.md","ref":"ch05/5-2.md","articles":[]},"previous":{"title":"5. 클로저","level":"1.5","depth":1,"path":"ch05/5.md","ref":"ch05/5.md","articles":[{"title":"5-1. 클로저의 의미 및 원리 이해","level":"1.5.1","depth":2,"path":"ch05/5-1.md","ref":"ch05/5-1.md","articles":[]},{"title":"5-2. 클로저와 메모리 관리","level":"1.5.2","depth":2,"path":"ch05/5-2.md","ref":"ch05/5-2.md","articles":[]},{"title":"5-3. 클로저 활용 사례","level":"1.5.3","depth":2,"path":"ch05/5-3.md","ref":"ch05/5-3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch05/5-1.md","mtime":"2023-05-25T07:21:58.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-25T07:22:30.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

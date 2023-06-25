@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2. 실행 컨텍스트 · GitBook</title>
+        <title>6-1. 프로토타입의 개념 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-1.html" />
+    <link rel="next" href="6-2.html" />
     
     
-    <link rel="prev" href="../ch01/1-6.html" />
+    <link rel="prev" href="6.html" />
     
 
     </head>
@@ -207,9 +207,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="2.html">
+        <li class="chapter " data-level="1.3" data-path="../ch02/2.html">
             
-                <a href="2.html">
+                <a href="../ch02/2.html">
             
                     
                     2. 실행 컨텍스트
@@ -221,9 +221,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../ch02/2-1.html">
             
-                <a href="2-1.html">
+                <a href="../ch02/2-1.html">
             
                     
                     2-1. 실행 컨텍스트란
@@ -234,9 +234,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="../ch02/2-2.html">
             
-                <a href="2-2.html">
+                <a href="../ch02/2-2.html">
             
                     
                     2-2. VariableEnviroment
@@ -247,9 +247,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="2-3.html">
+        <li class="chapter " data-level="1.3.3" data-path="../ch02/2-3.html">
             
-                <a href="2-3.html">
+                <a href="../ch02/2-3.html">
             
                     
                     2-3. LexicalEnviroment
@@ -368,9 +368,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../ch06/6.html">
+        <li class="chapter " data-level="1.6" data-path="6.html">
             
-                <a href="../ch06/6.html">
+                <a href="6.html">
             
                     
                     6. 프로토타입
@@ -382,9 +382,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../ch06/6-1.html">
+        <li class="chapter active" data-level="1.6.1" data-path="6-1.html">
             
-                <a href="../ch06/6-1.html">
+                <a href="6-1.html">
             
                     
                     6-1. 프로토타입의 개념
@@ -395,9 +395,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../ch06/6-2.html">
+        <li class="chapter " data-level="1.6.2" data-path="6-2.html">
             
-                <a href="../ch06/6-2.html">
+                <a href="6-2.html">
             
                     
                     6-2. 프로토타입 체이닝
@@ -408,9 +408,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../ch06/6-3.html">
+        <li class="chapter " data-level="1.6.3" data-path="6-3.html">
             
-                <a href="../ch06/6-3.html">
+                <a href="6-3.html">
             
                     
                     6-3. proto의 this 바인딩 
@@ -456,7 +456,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2. 실행 컨텍스트</a>
+        <a href=".." >6-1. 프로토타입의 개념</a>
     </h1>
 </div>
 
@@ -471,12 +471,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="2-&#xC2E4;&#xD589;-&#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;">2. &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;</h1>
-<ul>
-<li><a href="2-1.html">2-1. &#xC2E4;&#xD589; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB780;</a></li>
-<li><a href="2-2.html">2-2. VariableEnviroment</a></li>
-<li><a href="2-3.html">2-3. LexicalEnviroment</a></li>
-</ul>
+                                <h1 id="6-1-&#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC758;-&#xAC1C;&#xB150;">6-1 &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC758; &#xAC1C;&#xB150;</h1>
+<p>&#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC758; &#xAC1C;&#xB150;&#xC744; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBA3C;&#xC800; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
+<pre><code class="lang-jsx">&lt;script&gt;
+  function &#xACF5;&#xC7A5;() {
+    this.width = 71.5;
+    this.height = 146.7;
+  }
+&lt;/script&gt;
+</code></pre>
+<p>es6 &#xBB38;&#xBC95;&#xC5D0;&#xC11C; class&#xAC00; &#xB4F1;&#xC7A5;&#xD588;&#xC9C0;&#xB9CC; &#xC0AC;&#xC2E4; class&#xB3C4; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC704;&#xC640; &#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xD568;&#xC218;&#xC774;&#xB2E4;.</p>
+<p>&#xC704; &#xD568;&#xC218;&#xB97C; new &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch06/images/6-1-1.png?raw=true" alt="&#xADF8;&#xB9BC;-1" title="&#xADF8;&#xB9BC;-1"></p>
+<p>&#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74; prototype&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370;, &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xD568;&#xC218;&#xC5D0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xAC1D;&#xCCB4;&#xC778; prototype &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC0DD;&#xC131;&#xD574; &#xB193;&#xB294;&#xB2E4;.</p>
+<p>&#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC740; &#xC77C;&#xC885;&#xC758; &#xC720;&#xC804;&#xC790;&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xC27D;&#xB2E4;.</p>
+<pre><code class="lang-jsx">&lt;script&gt;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> &#xACF5;&#xC7A5;(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.width = <span class="hljs-number">71.5</span>;
+    <span class="hljs-keyword">this</span>.height = <span class="hljs-number">146.7</span>;
+  }
+
+  &#xACF5;&#xC7A5;.prototype.brand = <span class="hljs-string">&quot;Apple&quot;</span>;
+
+  <span class="hljs-keyword">var</span> iphone = <span class="hljs-keyword">new</span> &#xACF5;&#xC7A5;();
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+<p>&#xC704;&#xC640; &#xAC19;&#xC774; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xC758; prototype&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xBA74;, &#xD574;&#xB2F9; &#xD568;&#xC218;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB4E4;&#xC740; &#xD574;&#xB2F9; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch06/images/6-1-2.png?raw=true" alt="&#xADF8;&#xB9BC;-2" title="&#xADF8;&#xB9BC;-2"></p>
+<p>&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xB294; &#xC228;&#xACA8;&#xC9C4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; proto&#xAC00; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xBA70;, &#xC774; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xC758; prototype&#xC744; &#xCC38;&#xC870;&#xD558;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C;&#xB3C4; prototype &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch06/images/6-1-3.png?raw=true" alt="&#xADF8;&#xB9BC;-3" title="&#xADF8;&#xB9BC;-3"></p>
+<p>proto &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xC0DD;&#xB7B5;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xC5EC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCC3E;&#xC9C0; &#xBABB;&#xD560; &#xACBD;&#xC6B0;, proto &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; prototype &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC811;&#xADFC;&#xD55C;&#xB2E4;. &#xC774;&#xAC83;&#xC744; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785; &#xCCB4;&#xC778;&#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<p>&#xC27D;&#xAC8C; &#xB9D0;&#xD574; prototype&#xC740; &#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC774;&#xACE0;, proto&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xC790;&#xC758; prototype &#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5F0;&#xACB0;&#xACE0;&#xB9AC;&#xC774;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -504,12 +529,12 @@
 
             
                 
-                <a href="../ch01/1-6.html" class="navigation navigation-prev " aria-label="Previous page: 1-5. undefined와 null">
+                <a href="6.html" class="navigation navigation-prev " aria-label="Previous page: 6. 프로토타입">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-1.html" class="navigation navigation-next " aria-label="Next page: 2-1. 실행 컨텍스트란">
+                <a href="6-2.html" class="navigation navigation-next " aria-label="Next page: 6-2. 프로토타입 체이닝">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -520,7 +545,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. 실행 컨텍스트","level":"1.3","depth":1,"next":{"title":"2-1. 실행 컨텍스트란","level":"1.3.1","depth":2,"path":"ch02/2-1.md","ref":"ch02/2-1.md","articles":[]},"previous":{"title":"1-5. undefined와 null","level":"1.2.6","depth":2,"path":"ch01/1-6.md","ref":"ch01/1-6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch02/2.md","mtime":"2023-06-25T07:37:25.848Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-25T07:37:57.487Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-1. 프로토타입의 개념","level":"1.6.1","depth":2,"next":{"title":"6-2. 프로토타입 체이닝","level":"1.6.2","depth":2,"path":"ch06/6-2.md","ref":"ch06/6-2.md","articles":[]},"previous":{"title":"6. 프로토타입","level":"1.6","depth":1,"path":"ch06/6.md","ref":"ch06/6.md","articles":[{"title":"6-1. 프로토타입의 개념","level":"1.6.1","depth":2,"path":"ch06/6-1.md","ref":"ch06/6-1.md","articles":[]},{"title":"6-2. 프로토타입 체이닝","level":"1.6.2","depth":2,"path":"ch06/6-2.md","ref":"ch06/6-2.md","articles":[]},{"title":"6-3. proto의 this 바인딩 ","level":"1.6.3","depth":2,"path":"ch06/6-3.md","ref":"ch06/6-3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch06/6-1.md","mtime":"2023-06-25T07:37:25.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-25T07:37:57.487Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

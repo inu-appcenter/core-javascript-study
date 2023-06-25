@@ -511,6 +511,30 @@
 <p><img src="https://github.com/inu-appcenter/core-javascript-study/blob/main/ch06/images/6-2-3.png?raw=true" alt="&#xADF8;&#xB9BC;-6" title="&#xADF8;&#xB9BC;-6"></p>
 <p>&#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785; &#xCCB4;&#xC778;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xBA3C;&#xC800; &#xCC3E;&#xC740; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C; &#xC815;&#xC758;&#xD55C; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</p>
 <p>&#xD074;&#xB798;&#xC2A4; &#xAE30;&#xBC18; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xB294; &#xC0C1;&#xC18D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC;, &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC640; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785; &#xAE30;&#xBC18; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC6D0;&#xD615;(prototype)&#xC73C;&#xB85C; &#xC0BC;&#xACE0; &#xC774;&#xB97C; &#xBCF5;&#xC81C;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC0C1;&#xC18D;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xD6A8;&#xACFC;&#xB97C; &#xC5BB;&#xB294;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> &#xC5B4;&#xB808;&#xC774; = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>];
+&#xC5B4;&#xB808;&#xC774;(.__proto__).push(<span class="hljs-number">3</span>);
+&#xC5B4;&#xB808;&#xC774;(.__proto__)(.__proto__).hasOwnProperty(<span class="hljs-number">2</span>); <span class="hljs-comment">// true</span>
+</code></pre>
+<p>proto &#xB294; &#xC0DD;&#xB7B5;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785; &#xCCB4;&#xC774;&#xB2DD;&#xC5D0; &#xC758;&#xD574; &#xBC30;&#xC5F4; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C;&#xB3C4; Object&#xC758; prototype &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Grade = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; args.length; i++) {
+    <span class="hljs-keyword">this</span>[i] = args[i];
+  }
+  <span class="hljs-keyword">this</span>.length = args.length;
+};
+
+<span class="hljs-keyword">var</span> g = <span class="hljs-keyword">new</span> Grade(<span class="hljs-number">100</span>, <span class="hljs-number">80</span>);
+</code></pre>
+<p>Grade&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4; g &#xB294; &#xC720;&#xC0AC;&#xBC30;&#xC5F4;&#xAC1D;&#xCCB4;&#xC774;&#xB2E4;.</p>
+<p>g { 0: 100, 1: 80, length: 2 }</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xBC30;&#xC5F4; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</p>
+<p>&#xC774;&#xB97C; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xC778;&#xC2A4;&#xD134;&#xC2A4; g&#xC758; proto, &#xC989; Grade.prototype &#xC774; &#xBC30;&#xC5F4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC14;&#xB77C;&#xBCF4;&#xAC8C; &#xD574;&#xC8FC;&#xBA74; &#xB41C;&#xB2E4;.</p>
+<pre><code class="lang-js">Grade.prototype = [];
+
+g.pop();
+g.push(<span class="hljs-number">90</span>);
+</code></pre>
 
                                 
                                 </section>
@@ -554,7 +578,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6-2. 프로토타입 체이닝","level":"1.6.2","depth":2,"next":{"title":"6-3. proto의 this 바인딩 ","level":"1.6.3","depth":2,"path":"ch06/6-3.md","ref":"ch06/6-3.md","articles":[]},"previous":{"title":"6-1. 프로토타입의 개념","level":"1.6.1","depth":2,"path":"ch06/6-1.md","ref":"ch06/6-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch06/6-2.md","mtime":"2023-06-25T07:37:25.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-25T07:37:57.487Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-2. 프로토타입 체이닝","level":"1.6.2","depth":2,"next":{"title":"6-3. proto의 this 바인딩 ","level":"1.6.3","depth":2,"path":"ch06/6-3.md","ref":"ch06/6-3.md","articles":[]},"previous":{"title":"6-1. 프로토타입의 개념","level":"1.6.1","depth":2,"path":"ch06/6-1.md","ref":"ch06/6-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch06/6-2.md","mtime":"2023-06-25T07:38:34.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-25T07:39:19.082Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,0 +1,809 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4-5. 콜백 지옥과 비동기 제어 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-6.html" />
+    
+    
+    <link rel="prev" href="4-4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch01/1.html">
+            
+                <a href="../ch01/1.html">
+            
+                    
+                    1. 데이터 타입
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch01/1-1.html">
+            
+                <a href="../ch01/1-1.html">
+            
+                    
+                    1-1. 데이터 타입의 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch01/1-2.html">
+            
+                <a href="../ch01/1-2.html">
+            
+                    
+                    1-2. 데이터 타입에 관한 배경지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch01/1-3.html">
+            
+                <a href="../ch01/1-3.html">
+            
+                    
+                    1-3. 변수 선언과 데이터 할당
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../ch01/1-4.html">
+            
+                <a href="../ch01/1-4.html">
+            
+                    
+                    1-4. 기본형 데이터와 참조형 데이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../ch01/1-5.html">
+            
+                <a href="../ch01/1-5.html">
+            
+                    
+                    1-5. 불변 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../ch01/1-6.html">
+            
+                <a href="../ch01/1-6.html">
+            
+                    
+                    1-5. undefined와 null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch02/2.html">
+            
+                <a href="../ch02/2.html">
+            
+                    
+                    2. 실행 컨텍스트
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ch02/2-1.html">
+            
+                <a href="../ch02/2-1.html">
+            
+                    
+                    2-1. 실행 컨텍스트란
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ch02/2-2.html">
+            
+                <a href="../ch02/2-2.html">
+            
+                    
+                    2-2. VariableEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ch02/2-3.html">
+            
+                <a href="../ch02/2-3.html">
+            
+                    
+                    2-3. LexicalEnviroment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch03/3.html">
+            
+                <a href="../ch03/3.html">
+            
+                    
+                    3. this
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ch03/3-1.html">
+            
+                <a href="../ch03/3-1.html">
+            
+                    
+                    3-1. 상황에 따라 달라지는 this
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ch03/3-2.html">
+            
+                <a href="../ch03/3-2.html">
+            
+                    
+                    3-2. 명시적으로 this를 바인딩하는 방법
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4. 콜백
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="4-1.html">
+            
+                <a href="4-1.html">
+            
+                    
+                    4-1. 콜백 함수란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="4-2.html">
+            
+                <a href="4-2.html">
+            
+                    
+                    4-2. 제어권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="4-3.html">
+            
+                <a href="4-3.html">
+            
+                    
+                    4-3. 콜백 함수는 함다
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4-4.html">
+            
+                <a href="4-4.html">
+            
+                    
+                    4-4. 콜백 함수 내부의 this에 다른 값 바인딩하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="4-5.html">
+            
+                <a href="4-5.html">
+            
+                    
+                    4-5. 콜백 지옥과 비동기 제어
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="4-6.html">
+            
+                <a href="4-6.html">
+            
+                    
+                    4-6. 정리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ch05/5.html">
+            
+                <a href="../ch05/5.html">
+            
+                    
+                    5. 클로저
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ch05/5-1.html">
+            
+                <a href="../ch05/5-1.html">
+            
+                    
+                    5-1. 클로저의 의미 및 원리 이해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ch05/5-2.html">
+            
+                <a href="../ch05/5-2.html">
+            
+                    
+                    5-2. 클로저와 메모리 관리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ch05/5-3.html">
+            
+                <a href="../ch05/5-3.html">
+            
+                    
+                    5-3. 클로저 활용 사례
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ch06/6.html">
+            
+                <a href="../ch06/6.html">
+            
+                    
+                    6. 프로토타입
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ch06/6-1.html">
+            
+                <a href="../ch06/6-1.html">
+            
+                    
+                    6-1. 프로토타입의 개념
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ch06/6-2.html">
+            
+                <a href="../ch06/6-2.html">
+            
+                    
+                    6-2. 프로토타입 체이닝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ch06/6-3.html">
+            
+                <a href="../ch06/6-3.html">
+            
+                    
+                    6-3. proto의 this 바인딩 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../ch06/6-4.html">
+            
+                <a href="../ch06/6-4.html">
+            
+                    
+                    6-4 constructor 프로퍼티
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4-5. 콜백 지옥과 비동기 제어</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xCF5C;&#xBC31;-&#xC9C0;&#xC625;&#xACFC;-&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;">&#xCF5C;&#xBC31; &#xC9C0;&#xC625;&#xACFC; &#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4;</h1>
+<h3 id="&#xCF5C;&#xBC31;&#xC9C0;&#xC625;">&#xCF5C;&#xBC31;&#xC9C0;&#xC625;</h3>
+<ul>
+<li><p>&#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C; &#xC775;&#xBA85; &#xD568;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC774; &#xBC18;&#xBCF5;&#xB418;&#xC5B4; &#xCF54;&#xB4DC;&#xC758; &#xB4E4;&#xC5EC;&#xC4F0;&#xAE30;&#xAC00; &#xAC10;&#xB2F9;&#xC774; &#xD798;&#xB4E4; &#xC815;&#xB3C4;&#xB85C; &#xAE4A;&#xC5B4;&#xC9C0;&#xB294; &#xD604;&#xC0C1;</p>
+<pre><code class="lang-jsx">  <span class="hljs-keyword">const</span> accessToken = <span class="hljs-string">&quot;token&quot;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchMyOrders</span>(<span class="hljs-params"></span>) </span>{
+    checkNetworkStatus().then(status =&gt; 
+      <span class="hljs-keyword">if</span> (status) 
+        loginCheck(accessToken).then(user =&gt; {
+          setUser(user);
+          fetchOrdersById(user.userId).then(orders =&gt; {
+            setOrders(orders);
+          });
+        })
+    );
+  }
+</code></pre>
+</li>
+</ul>
+<h2 id="&#xCF5C;&#xBC31;-&#xC9C0;&#xC625;&#xACFC;-&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;">&#xCF5C;&#xBC31; &#xC9C0;&#xC625;&#xACFC; &#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4;</h2>
+<h3 id="&#xB3D9;&#xAE30;&#xC640;-&#xBE44;&#xB3D9;&#xAE30;">&#xB3D9;&#xAE30;&#xC640; &#xBE44;&#xB3D9;&#xAE30;</h3>
+<ul>
+<li>&#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xC911;&#xC778; &#xCF54;&#xB4DC;&#xAC00; &#xC644;&#xB8CC;&#xB41C; &#xD6C4;&#xC5D0;&#xC57C; &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xCF54;&#xB4DC;&#xB294; <strong>&#xB3D9;&#xAE30;</strong></li>
+<li>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;&#xC774; &#xACBD;&#xACFC;&#xB418;&#xBA74;, &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC9C1;&#xC811;&#xC801; &#xAC1C;&#xC785;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xBA74;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC678;&#xC758; &#xB300;&#xC0C1;&#xC5D0; &#xC694;&#xCCAD;&#xD558;&#xACE0; &#xC751;&#xB2F5;&#xC774; &#xC654;&#xC744; &#xB54C; &#xB4F1; <strong>&#xBCC4;&#xB3C4;&#xC758; &#xC694;&#xCCAD;, &#xC2E4;&#xD589; &#xB300;&#xAE30;, &#xBCF4;&#xB958; &#xB4F1;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xCF54;&#xB4DC;&#xB294; &#xBE44;&#xB3D9;&#xAE30;</strong></li>
+</ul>
+<h3 id="&#xCF5C;&#xBC31;&#xC9C0;&#xC625;-&#xD574;&#xACB0;">&#xCF5C;&#xBC31;&#xC9C0;&#xC625; &#xD574;&#xACB0;</h3>
+<p><style scoped>
+pre {
+   font-size: 0.7rem;
+}
+</style></p>
+<ol>
+<li>&#xAE30;&#xBA85;&#xD568;&#xC218;&#xB85C; &#xBCC0;&#xD658; <pre><code class="lang-jsx"> <span class="hljs-keyword">const</span> accessToken = <span class="hljs-string">&quot;token&quot;</span>;
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchMyOrders</span>(<span class="hljs-params"></span>) </span>{
+   checkNetworkStatus().then(handleNetworkStatus);
+ }
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleNetworkStatus</span>(<span class="hljs-params">status</span>) </span>{
+   <span class="hljs-keyword">if</span> (status) loginCheck(accessToken).then(handleLogin);
+ }
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleLogin</span>(<span class="hljs-params">user</span>) </span>{
+   setUser(user);
+   fetchOrdersById(user.userId).then(handleOrder);
+ }
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleOrder</span>(<span class="hljs-params">orders</span>) </span>{
+   setOrders(orders);
+ }
+</code></pre>
+</li>
+</ol>
+<h3 id="&#xCF5C;&#xBC31;&#xC9C0;&#xC625;-&#xD574;&#xACB0;">&#xCF5C;&#xBC31;&#xC9C0;&#xC625; &#xD574;&#xACB0;</h3>
+<p><style scoped>
+pre {
+   font-size: 0.5rem;
+}
+</style></p>
+<ol>
+<li><p>&#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC758; &#xB3D9;&#xAE30;&#xC801; &#xD45C;&#xD604;(1) - Promise(1)</p>
+<pre><code class="lang-jsx"> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) </span>{
+   checkNetworkStatus().then(status =&gt; {
+     resolve(status)
+   });
+ }).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">status</span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) </span>{
+     <span class="hljs-keyword">if</span> (status)
+       loginCheck(accessToken).then(user =&gt; {
+         setUser(user);
+         resolve(user);
+       })
+   });
+ }).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) </span>{
+     fetchOrdersById(user.userId).then(orders =&gt; {
+       setOrders(orders);
+       resolve(orders);
+     })
+   });
+ })
+</code></pre>
+</li>
+</ol>
+<p>ES6 Promise&#xB294; new &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xD55C; Promise&#xC758; &#xC778;&#xC790;&#xB85C; &#xB118;&#xACA8;&#xC8FC;&#xB294; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB294; &#xBC14;&#xB85C; &#xC2E4;&#xD589;&#xB418;&#xACE0;, <code>resolve</code> &#xB610;&#xB294; <code>reject</code> &#xAC00; &#xD638;&#xCD9C;&#xB418;&#xBA74; Promise&#xC758; <code>then</code> &#xB610;&#xB294; <code>catch</code> &#xAD6C;&#xBB38;&#xC73C;&#xB85C; &#xB118;&#xC5B4;&#xAC10; &#x21D2; &#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC758; &#xB3D9;&#xAE30;&#xC801; &#xD45C;&#xD604; &#xAC00;&#xB2A5;</p>
+<ol>
+<li><p>&#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC758; &#xB3D9;&#xAE30;&#xC801; &#xD45C;&#xD604;(2) - Promise(2)</p>
+<pre><code class="lang-jsx"> <span class="hljs-keyword">var</span> networkRequest = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">reqFunc, handleResult</span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">prevResult</span>) </span>{
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>)</span>{
+       reqFunc(prevResult).then((res) =&gt; resolve(handleResult ? handleResult(res) : res))
+     })
+   }
+ }
+ networkRequest(checkNetworkStatus)()
+   .then(networkRequest(loginCheck, (user) =&gt; {
+     setUser(user);
+     <span class="hljs-keyword">return</span> user;
+   }))
+   .then(networkRequest(fetchOrdersById, (orders) =&gt; {
+     setOrders(orders);
+     <span class="hljs-keyword">return</span> orders;
+   }))
+</code></pre>
+</li>
+<li><p>&#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC758; &#xB3D9;&#xAE30;&#xC801; &#xD45C;&#xD604;(3) - Generator</p>
+<pre><code class="lang-jsx"> <span class="hljs-keyword">var</span> request = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">params, reqFunc</span>) </span>{
+   reqFunc(params).then((res) =&gt; requests.next(res));
+ }
+ <span class="hljs-keyword">var</span> requestGenerator = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">var</span> status = <span class="hljs-keyword">yield</span> request(<span class="hljs-literal">null</span>, checkNetworkStatus);
+   <span class="hljs-keyword">var</span> user = <span class="hljs-keyword">yield</span> request(accessToken, loginCheck);
+   setUser(user);
+   <span class="hljs-keyword">var</span> orders = <span class="hljs-keyword">yield</span> request(user.userId, fetchOrdersById);
+   setOrders(orders);
+ }
+ <span class="hljs-keyword">var</span> requests = requestGenerator();
+ requests.next();
+</code></pre>
+</li>
+</ol>
+<p>ES6&#xC758; Generator&#xB97C; &#xC774;&#xC6A9;. <code>*</code> &#xC774; &#xBD99;&#xC740; &#xD568;&#xC218;&#xAC00; Generator &#xD568;&#xC218;&#xB85C;, &#xC81C;&#xB108;&#xB808;&#xC774;&#xD130; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; <code>next</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xAC16;&#xACE0; &#xC788;&#xB294; Iterator &#xB97C;&#xBC18;&#xD658;. <code>next</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xAC00;&#xC7A5; &#xBA3C;&#xC800; &#xB4F1;&#xC7A5;&#xD558;&#xB294; yield &#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC744; &#xBA48;&#xCD94;&#xACE0; &#xB2E4;&#xC2DC; <code>next</code> &#xAC00; &#xD638;&#xCD9C;&#xB418;&#xBA74; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;, &#xB2E4;&#xC74C; yield &#xC5D0;&#xC11C; &#xBA48;&#xCDA4;. &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; Generator &#xB0B4;&#xBD80; &#xCF54;&#xB4DC;&#xAC00; &#xC704;&#x2192;&#xC544;&#xB798;&#xB85C; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;</p>
+<ol>
+<li>&#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC758; &#xB3D9;&#xAE30;&#xC801; &#xD45C;&#xD604; (4) - Promise + async/await (&#xD3B8;&#xC548;..)</li>
+</ol>
+<pre><code class="lang-jsx"><span class="hljs-keyword">var</span> requestBuilder = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> status = <span class="hljs-keyword">await</span> checkNetworkStatus();
+    <span class="hljs-keyword">var</span> user = <span class="hljs-keyword">await</span> loginCheck(accessToken);
+    setUser(user);
+    <span class="hljs-keyword">var</span> orders = <span class="hljs-keyword">await</span> fetchOrdersById(user.userId);
+    setOrders(orders);
+}
+</code></pre>
+<p>ES2017&#xBD80;&#xD130; async/await &#xC744; &#xC774;&#xC6A9;, &#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xD568;&#xC218; &#xC55E;&#xC5D0; <code>async</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xBD99;&#xC774;&#xACE0;, &#xC2E4;&#xC9C8;&#xC801; &#xBE44;&#xB3D9;&#xAE30; &#xC791;&#xC5C5;&#xC744; &#xC694;&#xD558;&#xB294; &#xACF3;&#xC5D0; <code>await</code> &#xC744; &#xBD99;&#xC774;&#xBA74; <strong>&#xB4A4;&#xC758; &#xB0B4;&#xC6A9;&#xC744; Promise&#xB85C; &#xC790;&#xB3D9; &#xC804;&#xD658; &#xBC0F; resolve &#xB41C; &#xD6C4;&#xC5D0; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xC9C4;&#xD589;&#xB418;&#xAC8C; &#xD568;.</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4-4.html" class="navigation navigation-prev " aria-label="Previous page: 4-4. 콜백 함수 내부의 this에 다른 값 바인딩하기">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-6.html" class="navigation navigation-next " aria-label="Next page: 4-6. 정리">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4-5. 콜백 지옥과 비동기 제어","level":"1.5.5","depth":2,"next":{"title":"4-6. 정리","level":"1.5.6","depth":2,"path":"ch04/4-6.md","ref":"ch04/4-6.md","articles":[]},"previous":{"title":"4-4. 콜백 함수 내부의 this에 다른 값 바인딩하기","level":"1.5.4","depth":2,"path":"ch04/4-4.md","ref":"ch04/4-4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","comment","hide-published-with","github"],"pluginsConfig":{"github":{"url":"https://github.com/inu-appcenter/core-javascript-study"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch04/4-5.md","mtime":"2023-08-04T02:09:58.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-04T02:10:37.469Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
